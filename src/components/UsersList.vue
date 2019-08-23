@@ -1,12 +1,33 @@
 <template>
   <div class="users-list">
-    User Card
+    <user-card />
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
+import usersService from '@/services/users-service';
+import UserCard from '@/components/UserCard.vue';
+
 export default {
   name: 'UsersList',
+  components: {
+    UserCard,
+  },
+  mounted() {
+    this.getUsers();
+  },
+  methods: {
+    async getUsers() {
+      const response = await usersService.get();
+      const users = await response.json();
+      this.setUsers(users);
+    },
+    ...mapActions('users', ['setUsers']),
+  },
+  computed: {
+    ...mapGetters('users', ['users']),
+  },
 };
 </script>
 
