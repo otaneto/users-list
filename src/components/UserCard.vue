@@ -25,8 +25,9 @@ export default {
 <style>
  .card {
    height: 300px;
-   width: 300px;
+   min-width: 300px;
    border: 1px solid rgba(0, 0, 0, 0.3);
    flex: 1;
+   margin: 1em;
  }
 </style>
