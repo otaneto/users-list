@@ -1,6 +1,11 @@
 <template>
   <div class="users-list">
-    <user-card />
+    <template v-for="user in users">
+      <user-card
+        :key="user.id"
+        :user="user"
+      />
+    </template>
   </div>
 </template>
 
@@ -35,7 +40,9 @@ export default {
   .users-list {
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 3em;
   }
 </style>
