@@ -1,23 +1,25 @@
 <template>
-  <div class="card">
-    <div class="flex">
+  <div class="card flex column">
+    <div class="flex main-info align-center">
       <img
         class="user-avatar"
-        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+        :src='avatar'
         :alt="user.name"
       />
-      <div class="flex column">
-        <span class="title primary--text-dark">{{ user.username }}</span>
-        <span>{{ user.email }}</span>
+      <div class="flex column main-info-text">
+        <span class="title primary--text">{{ user.name }}</span>
+        <span class="subtitle">{{ user.email }}</span>
       </div>
     </div>
-    <small>Nome completo: {{ user.name }}</small>
-    <div>Telefone: {{ user.phone }}</div>
-    <div>
-      <span>Página: </span>
-      <a :href="user.website">{{ user.website }}</a>
+    <div class="flex column justify-start">
+      <span class="lowercase"><i class="fas fa-at"/>{{ user.username }}</span>
+      <span><i class="fas fa-phone" />{{ user.phone }}</span>
+      <div>
+        <i class="fas fa-globe-americas" />
+        <a :href="user.website">{{ user.website }}</a>
+      </div>
+      <span><i class="fas fa-map-marked-alt" />{{ address(user.address) }}</span>
     </div>
-    <div>{{ user.address }}</div>
   </div>
 </template>
 
@@ -31,22 +33,44 @@ export default {
       type: Object,
     },
   },
+  methods: {
+    address({ city, street, suite }) {
+      return `${city}, ${street}, ${suite}`;
+    },
+  },
+  computed: {
+    avatar() {
+      const name = this.user.name.replace(' ', '+');
+      return `https://ui-avatars.com/api/?name=${name}&background=0080B6&color=FFFFFF`;
+    },
+  },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+  i {
+    margin-right: 0.6em;
+    color: rgba(0,0,0,0.6);
+  }
+
  .card {
-   height: 300px;
-   min-width: 300px;
-   max-width: 300px;
-   border: 1px solid rgba(0, 0, 0, 0.3);
-   flex: 1;
-   margin: 1em;
-   padding: 1.5em;
+  height: 200px;
+  min-width: 370px;
+  max-width: 370px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 5px;
+  flex: 1;
+  padding: 1.5em;
+  background: no-repeat padding-box;
+  margin-bottom: 1.5em;
+  line-height: 1.4;
  }
  .user-avatar {
    border-radius: 50%;
-   width: 48px;
-   height: 48px;
+   width: 56px;
+   height: 56px;
+ }
+ .main-info-text{
+   padding: 0 0.8em;
  }
 </style>
