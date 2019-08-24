@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+import UsersList from './views/UsersList.vue';
 
 Vue.use(Router);
 
@@ -10,8 +10,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      redirect: {
+        name: 'UsersList',
+      },
+    },
+    {
+      path: '/users-list',
+      name: 'UsersList',
+      component: UsersList,
     },
   ],
 });
