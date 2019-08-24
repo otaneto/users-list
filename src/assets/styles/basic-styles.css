@@ -1,8 +1,12 @@
 body {
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 /* Layout */
+
+.container {
+  padding: 3em;
+}
 
 .flex {
   display: flex;
@@ -40,6 +44,10 @@ body {
   justify-content: flex-end;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 /* Fonts */
 
 .primary--text {
@@ -55,6 +63,10 @@ body {
 }
 
 /* Typography */
+
+.headline {
+  font-size: 24px;
+}
 
 .title {
   font-weight: bold;
