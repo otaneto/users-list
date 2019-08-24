@@ -62,7 +62,7 @@ export default {
   flex: 1;
   padding: 1.5em;
   background: no-repeat padding-box;
-  margin-bottom: 1.5em;
+  margin: .75em .2em;
   line-height: 1.4;
  }
  .user-avatar {
