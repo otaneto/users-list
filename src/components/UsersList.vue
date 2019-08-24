@@ -1,11 +1,24 @@
 <template>
-  <div class="users-list">
-    <template v-for="user in users">
-      <user-card
-        :key="user.id"
-        :user="user"
-      />
-    </template>
+  <div class="container flex column align-center">
+    <select
+      v-model="filter"
+      class="filter"
+      name="filter"
+      placeholder="Filtrar"
+    >
+      <option value="*">Todos</option>
+      <template v-for="option in options">
+        <option :key="option" :value="option">{{ option }}</option>
+      </template>
+    </select>
+    <div class="container flex justify-space-between wrap">
+      <template v-for="user in filteredUsers">
+        <user-card
+          :key="user.id"
+          :user="user"
+        />
+      </template>
+    </div>
   </div>
 </template>
 
@@ -19,6 +32,11 @@ export default {
   components: {
     UserCard,
   },
+  data() {
+    return {
+      filter: '*',
+    };
+  },
   mounted() {
     this.getUsers();
   },
@@ -28,21 +46,32 @@ export default {
       const users = await response.json();
       this.setUsers(users);
     },
+
     ...mapActions('users', ['setUsers']),
   },
   computed: {
     ...mapGetters('users', ['users']),
+    filteredUsers() {
+      if (this.filter !== '*') {
+        return this.users.filter(user => user.email.indexOf(this.filter) !== -1);
+      }
+      return this.users;
+    },
+    options() {
+      const domains = this.users.map((user) => {
+        const { email } = user;
+        const domain = email.slice(email.lastIndexOf('.'));
+        return domain;
+      });
+      const uniqueDomains = [...new Set(domains)];
+      return uniqueDomains.sort();
+    },
   },
 };
 </script>
 
 <style>
-  .users-list {
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 3em;
+  select {
+    width: 300px;
   }
 </style>
