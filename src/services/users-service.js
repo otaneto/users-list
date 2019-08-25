@@ -1,6 +1,6 @@
 const usersService = {
   get() {
-    return fetch('http://jsonplaceholder.typicode.com/users');
+    return fetch('https://jsonplaceholder.typicode.com/users');
   },
 };
 
