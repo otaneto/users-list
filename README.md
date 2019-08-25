@@ -1,29 +1,19 @@
-# users-list
+# Lista de usuários
+Para visualizar a demo do projeto, acesse:
 
-## Project setup
+https://otacilio-users-list.herokuapp.com
+
+## Instalar o projeto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar projeto para desenvolvimento
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilar e minificar projeto para produção
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
