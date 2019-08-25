@@ -1,5 +1,6 @@
 <template>
   <div class="flex column align-center">
+    <h1 class="primary--text-darker">Lista de usuários</h1>
     <user-filter
       :options="options"
       @selected="filter = $event"
