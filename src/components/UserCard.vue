@@ -99,16 +99,18 @@ export default {
     margin: 0.8em;
     line-height: 1.4;
   }
+
  .user-avatar {
    border-radius: 50%;
    max-width: 48px;
    max-height: 48px;
  }
+
  .card-header {
    height: 100px;
-   padding: 0 0.5em;
    box-sizing: content-box;
  }
+
 .main-info-text{
   padding: 0 0.5em;
   width: 100%;
