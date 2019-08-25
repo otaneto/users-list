@@ -1,20 +1,10 @@
 <template>
-  <div class="container flex column align-center">
-    <div class="flex align-center">
-      <span class="subtitle">Filtrar por domínio:&nbsp;&nbsp;</span>
-      <select
-        v-model="filter"
-        class="filter"
-        name="filter"
-        placeholder="Filtrar"
-      >
-        <option value="*">Todos</option>
-        <template v-for="option in options">
-          <option :key="option" :value="option">{{ option }}</option>
-        </template>
-      </select>
-    </div>
-    <div class="container flex justify-space-between wrap">
+  <div class="flex column align-center">
+    <user-filter
+      :options="options"
+      @selected="filter = $event"
+    />
+    <div class="flex users-list wrap">
       <template v-for="user in filteredUsers">
         <user-card
           :key="user.id"
@@ -28,11 +18,13 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 import usersService from '@/services/users-service';
+import UserFilter from '@/components/UserFilter.vue';
 import UserCard from '@/components/UserCard.vue';
 
 export default {
   name: 'UsersList',
   components: {
+    UserFilter,
     UserCard,
   },
   data() {
@@ -73,47 +65,44 @@ export default {
 };
 </script>
 
-<style>
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-    box-shadow: none;
-    border: 0 !important;
-    background: #1F3A54;
-    background-image: none;
+<style scoped>
+  @media only screen and (max-width: 2560px) {
+    .users-list {
+      width: 66%;
+    }
   }
-  .filter {
-    position: relative;
-    display: flex;
-    width: 20em;
-    height: 3em;
-    line-height: 3;
-    background: #1F3A54;
-    overflow: hidden;
-    border-radius: .25em;
+  @media only screen and (max-width: 2559px) {
+    .users-list {
+      width: 82%;
+    }
   }
-  select {
-    flex: 1;
-    padding: 0 .5em;
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.9em;
+  @media only screen and (max-width: 1439px) {
+    .users-list {
+      width: 86%;
+    }
   }
-
-  .filter::after {
-    content: '\25BC';
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1em;
-    background: #1F3A54;
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-transition: .25s all ease;
-    -o-transition: .25s all ease;
-    transition: .25s all ease;
+  @media only screen and (max-width: 1365px) {
+    .users-list {
+      width: 75%;
+    }
+  }
+  @media only screen and (max-width: 1023px) {
+    .users-list {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .users-list {
+      justify-content: start;
+    }
+  }
+  @media only screen and (max-width: 425px) {
+    .users-list {
+      justify-content: center;
+    }
+  }
+  .users-list {
+    margin-top: 1em;
   }
 </style>

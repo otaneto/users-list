@@ -2,6 +2,7 @@ body {
   font-family: 'Roboto', Helvetica, sans-serif;
   padding: 0;
   margin: 0;
+  font-size: 14px;
 }
 
 /* Colors */
@@ -111,16 +112,31 @@ $primary-darker: #1F3A54;
 
 /* Typography */
 
-.headline {
-  font-size: 24px;
-}
-
 .title {
   font-weight: 700;
-  font-size: 1.6em;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 1.2em;
 }
+
+@media only screen and (max-width: 320px) {
+  .title {
+    font-size: 1.4em;
+  }
+  
+  .subtitle {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 321px) {
+  .title {
+    font-size: 1.4em;
+  }
+  
+  .subtitle {
+    font-size: 1em;
+  }
+}
+
