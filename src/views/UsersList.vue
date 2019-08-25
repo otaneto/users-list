@@ -71,13 +71,13 @@ export default {
       width: 66%;
     }
   }
-  
+
   @media only screen and (max-width: 1440px) {
     .users-list {
       width: 86%;
     }
   }
-  
+
   @media only screen and (max-width: 1366px) {
     .users-list {
       width: 75%;

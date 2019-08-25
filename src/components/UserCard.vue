@@ -55,6 +55,13 @@ export default {
     color: rgba(0,0,0,0.6);
   }
 
+  @media only screen and (max-width: 2560px) {
+    .card {
+      max-width: 26%;
+      min-width: 26%;
+    }
+  }
+
   @media only screen and (max-width: 1440px) {
     .card {
       max-width: 26%;
@@ -71,19 +78,12 @@ export default {
 
   @media only screen and (max-width: 768px) {
     .card {
-      max-width: 38%;
-      min-width: 38%;
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    .card {
       max-width: 37%;
       min-width: 37%;
     }
   }
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 568px) {
     .card {
       min-width: 85%;
       max-width: 85%;
@@ -94,7 +94,6 @@ export default {
     height: 200px;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 5px;
-    // flex: 1;
     padding: 1.5em;
     background: no-repeat padding-box;
     margin: 0.8em;
