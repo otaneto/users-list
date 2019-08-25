@@ -78,8 +78,8 @@ export default {
 
   @media only screen and (max-width: 768px) {
     .card {
-      max-width: 38%;
-      min-width: 38%;
+      max-width: 37%;
+      min-width: 37%;
     }
   }
 

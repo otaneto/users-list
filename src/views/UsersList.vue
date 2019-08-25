@@ -71,37 +71,38 @@ export default {
       width: 66%;
     }
   }
-  @media only screen and (max-width: 2559px) {
-    .users-list {
-      width: 82%;
-    }
-  }
-  @media only screen and (max-width: 1439px) {
+  
+  @media only screen and (max-width: 1440px) {
     .users-list {
       width: 86%;
     }
   }
-  @media only screen and (max-width: 1365px) {
+  
+  @media only screen and (max-width: 1366px) {
     .users-list {
       width: 75%;
     }
   }
-  @media only screen and (max-width: 1023px) {
+
+  @media only screen and (max-width: 1024px) {
     .users-list {
       width: 100%;
       justify-content: center;
     }
   }
+
   @media only screen and (max-width: 768px) {
     .users-list {
       justify-content: start;
     }
   }
+
   @media only screen and (max-width: 425px) {
     .users-list {
       justify-content: center;
     }
   }
+
   .users-list {
     margin-top: 1em;
   }
