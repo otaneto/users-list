@@ -41,7 +41,7 @@ export default {
     position: relative;
     font-family: 'Roboto', Helvetica, sans-serif;
     select {
-      width: 200px;
+      width: 130px;
       height: 24px;
     }
   }
