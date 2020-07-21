@@ -1,4 +1,4 @@
-# Github Users List
+# Users List
 You can run a live demo on:
 
 https://otacilio-users-list.herokuapp.com
