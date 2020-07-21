@@ -1,19 +1,19 @@
-# Lista de usuários
-Para visualizar a demo do projeto, acesse:
+# Github Users List
+You can run a live demo on:
 
 https://otacilio-users-list.herokuapp.com
 
-## Instalar o projeto
+## Installation
 ```
 npm install
 ```
 
-### Compilar projeto para desenvolvimento
+### Run project
 ```
 npm run serve
 ```
 
-### Compilar e minificar projeto para produção
+### Build
 ```
 npm run build
 ```
